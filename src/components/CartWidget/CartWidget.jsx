@@ -6,7 +6,8 @@ const CartWidget = () => {
     <div className={styles.contenedorCarrito}>
       <ShoppingCartCheckoutIcon className={styles.carrito}/>
     </div>
-  );
+  ); 
+  
 };
 
 export default CartWidget;
