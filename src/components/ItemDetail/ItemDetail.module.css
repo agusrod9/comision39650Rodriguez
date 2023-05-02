@@ -1,0 +1,11 @@
+.contenedorDetails{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    margin: 15px auto 15px auto;
+}
+
+img{
+    max-height: 500px;
+    margin: auto;
+}

@@ -1,4 +1,4 @@
-h1 {
+.titulo {
   text-align: center;
   color: black;
   font-size: 50px;
@@ -6,10 +6,9 @@ h1 {
   text-shadow: 2px green;
 }
 
-h3 {
+.subTitulo {
   text-align: center;
   color: black;
   font-size: large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-
