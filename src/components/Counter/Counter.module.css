@@ -1,0 +1,25 @@
+.carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+}
+
+.carrito Button{
+    height: 40px;
+}
+
+.btnCantidad{
+    display: flex;
+    flex-direction: row;
+    gap: 29px;
+}
+
+.btnComprar{
+    margin-top: 1px;
+    align-self: flex-end;
+}
+
+.btnComprar Button{
+    height: 70px;
+}

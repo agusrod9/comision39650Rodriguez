@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
+import styles from "./ItemList.module.css"
+import { db } from "../../firebaseConfig";
+import {getDocs, collection, query, where} from "firebase/firestore"
+
 
 const ItemListContainer = () => {
 
@@ -11,20 +14,41 @@ const ItemListContainer = () => {
 
   useEffect(() => {
 
-    const productsFiltered = products.filter(prod => prod.cat === categoryName);
+    let queryProds;
+    const itemCollection = collection( db, "products" );
 
-    const tarea = new Promise((resolve, reject) => {
-      resolve( categoryName ? productsFiltered : products )
-    });
+    if(categoryName){
+      const filteredItemCollection = query(itemCollection, where("cat", "==", categoryName));
+      queryProds = filteredItemCollection;
+    }else{
+      queryProds = itemCollection;
+    }
 
-    tarea
-    .then((res) => setItems(res))
-    .catch((error) => console.log(error));
+    getDocs(queryProds)
+      .then((res) => {
+        const products = res.docs.map( product => {
+          return {
+            ...product.data(),
+            id: product.id
+          }
+        })
+        setItems(products);
+      }) 
+      .catch((err) => console.log(err));
 
   }, [categoryName]);
 
+  
+
   return (
     <div>
+
+      {items.length === 0 && (
+        <div className={styles.cargando}>
+          <img src="https://cdn.dribbble.com/users/778626/screenshots/4339853/car-middle.gif"></img>
+        </div> 
+      )}
+
       <ItemList items={items} />
     </div>
   );

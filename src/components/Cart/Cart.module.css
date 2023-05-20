@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Racing+Sans+One&display=swap');
+
+.contenedor{
+    margin: auto;
+    width: 800px;
+    text-align: center;
+}
+
+.titulo{
+    font-family: 'Racing Sans One', cursive;
+}
+
+.cartItem{
+    text-align: left;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 0px 20px 10px 20px;
+    display: flex;
+    flex-direction: row;
+    height: 180px;
+}
+
+.cartItemDesc{
+    width: 80%;
+    align-self: flex-end;
+}
+
+.cartItemImg{
+    width: 35%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItemImg img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.btnCarrito{
+    gap: 29px;
+}

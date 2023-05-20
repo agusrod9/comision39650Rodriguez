@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Racing+Sans+One&display=swap');
+
 .contenedorNavBar {
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: space-between;
   background-color: black;
+  font-family: 'Racing Sans One', cursive;
+  text-transform: uppercase;
 }
 
 .menu {
